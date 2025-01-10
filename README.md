@@ -41,7 +41,8 @@ import matplotlib.pyplot as plt
 xs = [n[0] for n in result_path]
 ys = [n[1] for n in result_path]
 
-plt.imshow(grid.T, origin='lower', extent=[0, grid_width, 0, grid_height], cmap='cividis') # Transpose aligns rows (axis 0) with y-axis and columns (axis 1) with x-axis.
+plt.imshow(grid.T, origin='lower', extent=[0, grid_width, 0, grid_height], cmap='cividis')
+# Transpose aligns rows (axis 0) with y-axis and columns (axis 1) with x-axis.
 plt.grid(color='black', linestyle='-', linewidth=0.5)
 plt.xticks(range(grid_width))  
 plt.yticks(range(grid_height))
