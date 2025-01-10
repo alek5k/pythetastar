@@ -3,7 +3,7 @@ Python implementation of the Theta* algorithm (Daniel, Nash, "Theta star, Any-an
 
 Example of path generated:
 
-![Path generated](examples/path.png)
+![Path generated](https://github.com/alek5k/pythetastar/raw/master/examples/path.png)
 
 Dynamic replanning is allowed by modifying `new_blocked_cells` which is an input to the `theta_star` function.
 
@@ -14,7 +14,6 @@ Dynamic replanning is allowed by modifying `new_blocked_cells` which is an input
 ```python
 import numpy as np
 from pythetastar import theta_star
-import matplotlib.pyplot as plt
 
 grid = np.array([
     [0, 0, 0, 0, 1, 0, 1, 1],
@@ -32,11 +31,13 @@ goal = (grid_width, grid_height)
 
 result_path, node_set, durations, lengths, paths = theta_star(start, goal, grid)
 print(result_path) 
-# output: [[0, 0], [5, 7], [6, 9], [19, 19]]
+# output: [[0, 0], [1, 2], [5, 4], [6, 4], [8, 8]]
 ```
 
 Plotting:
 ```python
+import matplotlib.pyplot as plt
+
 xs = [n[0] for n in result_path]
 ys = [n[1] for n in result_path]
 

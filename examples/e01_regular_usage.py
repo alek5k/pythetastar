@@ -17,7 +17,7 @@ start = (0, 0)
 goal = (grid_width, grid_height)
 
 result_path, node_set, durations, lengths, paths = theta_star(start, goal, grid)
-print(result_path) # output: [[0, 0], [5, 7], [6, 9], [19, 19]]
+print(result_path) # output: [[0, 0], [1, 2], [5, 4], [6, 4], [8, 8]]
 
 xs = [n[0] for n in result_path]
 ys = [n[1] for n in result_path]
