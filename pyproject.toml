@@ -1,0 +1,42 @@
+# https://setuptools.pypa.io/en/latest/userguide/pyproject_config.html
+# https://github.com/pypa/sampleproject/blob/main/pyproject.toml
+
+[project]
+name = "pythetastar"
+version = "0.0.1"  
+description = "Implementation of Theta* algorithm" 
+readme = "README.md"
+requires-python = ">=3.7"
+license = {file = "LICENSE"}
+authors = []
+maintainers = []
+
+classifiers = [
+    "Programming Language :: Python :: 3",
+]
+
+dependencies = [
+  "numpy",
+]
+
+[project.optional-dependencies]
+dev = ["check-manifest"]
+test = ["coverage"]
+
+[project.urls]
+"Homepage" = "https://github.com/alek5k/pythetastar"
+"Bug Reports" = "https://github.com/alek5k/pythetastar/issues"
+"Source" = "https://github.com/alek5k/pythetastar"
+
+
+# https://setuptools.pypa.io/en/latest/userguide/datafiles.html#package-data
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+pythetastar = ["**"] # https://stackoverflow.com/a/73593532/2234396
+
+[build-system]
+requires = ["setuptools>=62.3.0", "wheel"] # modified from 43.0.0 to enable recursive wildcard
+build-backend = "setuptools.build_meta"

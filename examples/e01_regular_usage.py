@@ -1,17 +1,3 @@
-# PyThetaStar
-Python implementation of the Theta* algorithm (Daniel, Nash, "Theta star, Any-angle path planning on grids"). This is a modified and simplified single-file adaptation of the implementation [found here.](https://github.com/rhidra/phi_star_2d/blob/master/theta_star.py)
-
-Example of path generated:
-
-![Path generated](examples/path.png)
-
-Dynamic replanning is allowed by modifying `new_blocked_cells` which is an input to the `theta_star` function.
-
-# Installation
-`pip install pythetastar`
-
-# Basic Usage
-```python
 import numpy as np
 from pythetastar import theta_star
 import matplotlib.pyplot as plt
@@ -31,12 +17,8 @@ start = (0, 0)
 goal = (grid_width, grid_height)
 
 result_path, node_set, durations, lengths, paths = theta_star(start, goal, grid)
-print(result_path) 
-# output: [[0, 0], [5, 7], [6, 9], [19, 19]]
-```
+print(result_path) # output: [[0, 0], [5, 7], [6, 9], [19, 19]]
 
-Plotting:
-```python
 xs = [n[0] for n in result_path]
 ys = [n[1] for n in result_path]
 
@@ -47,4 +29,3 @@ plt.yticks(range(grid_height))
 plt.plot(xs, ys, 'r-')
 plt.scatter(xs, ys)
 plt.show()
-```
